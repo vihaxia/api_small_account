@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/weapp/login',"LoginController@login");
+Route::get('/weapp/user',"LoginController@user");
