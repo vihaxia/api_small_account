@@ -18,7 +18,7 @@ class LoginController extends Controller
         if ($result['loginState'] === Constants::S_AUTH) {
             return [
                 'code' => 0,
-                'data' => $result['userinfo']
+                'data' => Constants::S_AUTH
             ];
         }
 
