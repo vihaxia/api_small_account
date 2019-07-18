@@ -17,7 +17,7 @@ class CheckWxSkey
     public function handle($request, Closure $next)
     {
 
-        if (!$request->input('X-WX-Skey')) {
+        if (!$request->header('X-WX-Skey')) {
             echo json_encode([
                 'code' => '-1',
                 'error' => '缺少头信息：X-WX-Skey'
