@@ -21,8 +21,6 @@ class CheckWxSkey
                 'error' => '缺少头信息：X-WX-Skey'
             ];
         }
-
-
         
         return $next($request);
     }

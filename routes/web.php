@@ -14,7 +14,7 @@
 Route::get('/weapp/login',"LoginController@login");
 
 
-Route::middleware('check.wxskey')->domain('api_local.bstcode.com')->group(function () {
+Route::middleware('check.wxskey')->group(function () {
     Route::get('/weapp/user',"LoginController@user");
     Route::resource('record', 'RecordController');
 });
