@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Redis;
 use jmluang\weapp\Constants;
 use jmluang\weapp\WeappLoginInterface as LoginInterface;
 
@@ -14,11 +15,12 @@ class LoginController extends Controller
     public function login(LoginInterface $login)
     {
         $result = $login::login();
-
         if ($result['loginState'] === Constants::S_AUTH) {
+            // 成功地响应会话信息
+            Redis::set('3rd_session', $result['userinfo']['skey']. '_'. $result['userinfo']['openId'], '');
             return [
                 'code' => 0,
-                'data' => Constants::S_AUTH
+                'data' => $result['userinfo']
             ];
         }
 
