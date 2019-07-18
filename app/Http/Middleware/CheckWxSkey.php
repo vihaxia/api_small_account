@@ -2,7 +2,10 @@
 
 namespace App\Http\Middleware;
 
+use App\Model\Record;
+use App\Model\User;
 use Closure;
+use Illuminate\Support\Facades\Redis;
 
 class CheckWxSkey
 {
@@ -15,13 +18,21 @@ class CheckWxSkey
      */
     public function handle($request, Closure $next)
     {
-        if (!$request->header('X-WX-Skey')) {
-            return [
-                'code' => -1,
+
+        if (!$request->input('X-WX-Skey')) {
+            echo json_encode([
+                'code' => '-1',
                 'error' => '缺少头信息：X-WX-Skey'
-            ];
+            ]);
+            exit();
         }
-        
+
+        $user = User::where(['skey' => $request->input('X-WX-Skey')])->find();
+
+        if ($user) {
+            Redis::set($user['skey'], $user['id']);
+        }
+
         return $next($request);
     }
 }

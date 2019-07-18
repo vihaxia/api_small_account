@@ -4,7 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Record extends Model
+class User extends Model
 {
-    protected $table = 'record';
+    protected $table = 'weapp_user';
 }
