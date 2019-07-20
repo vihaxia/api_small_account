@@ -3,13 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Model\User;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function index()
     {
         $user = User::find($this->userId);
-        dump($user);
+        if ($user) {
+            return [
+                'code' => 888,
+                'data' => $user['user_info']
+            ];
+        }
+
+        return [
+            'code' => -1,
+            'error' => 'skey错误'
+        ];
     }
 }
