@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Model\Record;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redis;
 
 class RecordController extends Controller
 {
 
     public function index(Request $request)
     {
-
+        $records = Record::where(['user_id' => $this->userId])->get();
+        dump($records);
     }
 
 
