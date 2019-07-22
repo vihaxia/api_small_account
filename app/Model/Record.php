@@ -10,12 +10,12 @@ class Record extends Model
 
     public function relation()
     {
-        return $this->belongsTo('App\Model\Relation', 'id', 'relation_id');
+        return $this->belongsTo('App\Model\Relation', 'relation_id');
     }
 
     public function event()
     {
-        return $this->belongsTo('App\Model\Event', 'id', 'event_id');
+        return $this->belongsTo('App\Model\Event', 'event_id');
     }
     
 }

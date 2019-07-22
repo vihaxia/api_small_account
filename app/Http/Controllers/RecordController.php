@@ -10,7 +10,7 @@ class RecordController extends Controller
 
     public function index(Request $request)
     {
-        $records = Record::where(['user_id' => $this->userId])->get();
+        $records = Record::where(['user_id' => $this->userId])->with(['relation', 'event'])->get();
         dump($records);
     }
 
