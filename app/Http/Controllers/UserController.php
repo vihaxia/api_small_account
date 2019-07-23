@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\User;
 use Carbon\Carbon;
+use EasyWeChatComposer\EasyWeChat;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -41,7 +42,7 @@ class UserController extends Controller
         $weappOpenid = $data['openid'];
         $weixinSessionKey = $data['session_key'];
         $nickname = $request->nickname;
-        $avatar = str_replace('/132', '/0', $request->avatar);//拿到分辨率高点的头像
+        $avatar = $request->avatar;//拿到分辨率高点的头像
         $country = $request->country?$request->country:'';
         $province = $request->province?$request->province:'';
         $city = $request->city?$request->city:'';

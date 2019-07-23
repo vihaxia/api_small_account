@@ -15,4 +15,5 @@ use Illuminate\Http\Request;
 
 Route::group(['prefix' => '/v1'], function () {
     Route::post('/user/login', 'UserController@weappLogin');
+    Route::any('/wechat', 'WeChatController@serve');  // 微信相关交互路由
 });
