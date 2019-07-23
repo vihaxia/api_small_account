@@ -11,13 +11,4 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
-    protected $userId;
-
-    public function __construct(Request $request)
-    {
-        $redis = app('redis.connection');
-        $skey = $request->header('X-WX-Skey');
-        $this->userId = $redis->exists($skey) ? $redis->get($skey) : 0;
-    }
 }

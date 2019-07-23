@@ -10,6 +10,6 @@ class Relation extends Model
 
     public function record()
     {
-        return $this->hasMany('App\Model\Record', 'id', 'relation_id');
+        return $this->hasMany('App\Model\Record', 'relation_id', 'id');
     }
 }
