@@ -40,8 +40,9 @@ class RecordController extends Controller
         }
 
         $speechKey = 0;
-        $speech = config('weapp.index_header_speech')[$type];
-        foreach ($speech as $key => $value) {
+        $speech = config('weapp.index_header_speech');
+        
+        foreach ($speech[$type] as $key => $value) {
             if (($money / 100) > $key) {
                 $speechKey = $key;
             }
