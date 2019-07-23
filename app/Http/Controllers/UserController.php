@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Model\User;
 use Carbon\Carbon;
-use EasyWeChatComposer\EasyWeChat;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
