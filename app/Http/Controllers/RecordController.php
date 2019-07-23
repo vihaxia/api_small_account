@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\DB;
 class RecordController extends Controller
 {
 
+    /**
+     * @param Request $request
+     * @return false|string
+     */
     public function index(Request $request)
     {
 
@@ -40,15 +44,22 @@ class RecordController extends Controller
         }
 
         $speechKey = 0;
-        $speech = config('weapp.index_header_speech');
-        
-        foreach ($speech[$type] as $key => $value) {
+        $headerSpeech = config('weapp.index_header_speech');
+        $bodySpeech = config('weapp.index_body_speech');
+
+        foreach ($headerSpeech[$type] as $key => $value) {
             if (($money / 100) > $key) {
                 $speechKey = $key;
             }
         }
 
-        return json_encode(['code' => 0, 'data' => $records, 'money' => ($money / 100), 'speech' => $speech[$type][$speechKey]]);
+        return response()->json([
+            'code' => 0,
+            'data' => $records,
+            'money' => ($money / 100),
+            'header_speech' => $headerSpeech[$type][$speechKey],
+            'body_speech' => $bodySpeech[array_rand($bodySpeech)]
+        ]);
 
     }
 

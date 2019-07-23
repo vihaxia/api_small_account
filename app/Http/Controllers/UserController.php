@@ -15,13 +15,13 @@ class UserController extends Controller
     public function index() {
         $user = User::find($this->userId);
         if ($user) {
-            return json_encode([
+            return response()->json([
                 'code' => 0,
                 'data' => $user['user_info']
             ]);
         }
 
-        return json_encode([
+        return response()->json([
             'code' => -1,
             'error' => 'skey错误'
         ]);

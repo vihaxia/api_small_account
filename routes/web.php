@@ -16,6 +16,7 @@ Route::get('/weapp/login',"LoginController@login");
 
 Route::middleware('check.wxskey')->group(function () {
     Route::get('/weapp/user',"LoginController@user");
-    Route::resource('record', 'RecordController');
-    Route::get('user', 'UserController@index');
+    Route::resource('record', 'RecordController'); // 记录
+    Route::get('user', 'UserController@index'); // 我的
+    Route::get('relation', 'RelationController@index'); // 关系管理
 });
