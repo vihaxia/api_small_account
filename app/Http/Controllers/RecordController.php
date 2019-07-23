@@ -39,7 +39,15 @@ class RecordController extends Controller
             $money += $record->money;
         }
 
-        return json_encode(['code' => 0, 'data' => $records, 'money' => ($money / 100)]);
+        $speechKey = 0;
+        $speech = config('weapp.index_header_speech')[$type];
+        foreach ($speech as $key => $value) {
+            if (($money / 100) > $key) {
+                $speechKey = $key;
+            }
+        }
+
+        return json_encode(['code' => 0, 'data' => $records, 'money' => ($money / 100), 'speech' => $speech[$type][$speechKey]]);
 
     }
 
