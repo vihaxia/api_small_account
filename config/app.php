@@ -175,7 +175,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
-        Overtrue\LaravelWeChat\ServiceProvider::class
+        Overtrue\LaravelWeChat\ServiceProvider::class,
+        Dingo\Api\Provider\LaravelServiceProvider::class,
     ],
 
     /*
