@@ -14,13 +14,17 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->string('weapp_openid')->nullable()->comment('微信开放id');
+            $table->string('weapp_session_key')->nullable()->comment('微信session_key');
+            $table->string('nickname')->nullable()->comment('昵称');
+            $table->string('weapp_avatar')->nullable()->comment('微信头像');
+            $table->string('country')->nullable()->comment('国家');
+            $table->string('province')->nullable()->comment('省份');
+            $table->string('city')->nullable()->comment('所在城市');
+            $table->string('language')->nullable()->comment('语言');
+            $table->json('location')->nullable()->comment('当前地理信息');
+            $table->enum('gender', ['1', '2'])->default('1')->comment('性别默认男');
+            $table->string('phone')->nullable()->unique();
         });
     }
 
