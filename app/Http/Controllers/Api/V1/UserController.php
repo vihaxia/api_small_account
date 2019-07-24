@@ -63,6 +63,7 @@ class UserController extends Controller
                 'city' => $city,
                 'gender' => $gender,
                 'language' => $language,
+                'created_at' => now()
             ]);
         }
         //如果注册过的，就更新下下面的信息

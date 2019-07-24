@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34abccd9-1dcd-45a2-9944-ac4014e9aaab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/UserController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,12 +17,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/V1/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-286">
-              <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+            <state relative-caret-position="985">
+              <caret line="81" column="41" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="41" />
               <folding>
-                <element signature="e#40#59#0#PHP" expanded="true" />
+                <element signature="e#58#94#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,18 +91,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/V1/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="39" column="69" lean-forward="true" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
-              <folding>
-                <element signature="e#58#94#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -113,9 +102,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>checkLogin</find>
-      <find>getWxLoginExpires</find>
-      <find>skey</find>
       <find>relation_id</find>
       <find>event_id</find>
       <find>like</find>
@@ -130,7 +116,6 @@
       <find>batch</find>
       <find>level</find>
       <find>is_admin</find>
-      <find>username</find>
       <find>check.wxskey</find>
       <find>redis</find>
       <find>mini_program</find>
@@ -142,7 +127,11 @@
       <find>ServiceProvider</find>
       <find>Overtrue</find>
       <find>App\Http\Controllers\Api\V1\Controller</find>
+      <find>code已过期或不正确</find>
       <find>response</find>
+      <find>username</find>
+      <find>email_verified_at</find>
+      <find>created_at</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -181,9 +170,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/V1/UserController.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/V1/UserController.php" />
       </list>
     </option>
   </component>
@@ -344,6 +333,23 @@
             <path>
               <item name="api_small_account" type="b2602c69:ProjectViewProjectNode" />
               <item name="api_small_account" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api_small_account" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api_small_account" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Api" type="462c0819:PsiDirectoryNode" />
+              <item name="V1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api_small_account" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api_small_account" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -402,12 +408,12 @@
       <workItem from="1563412926381" duration="33174000" />
       <workItem from="1563522486818" duration="12790000" />
       <workItem from="1563843666062" duration="14642000" />
-      <workItem from="1563891866250" duration="14247000" />
+      <workItem from="1563891866250" duration="16720000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108970000" />
+    <option name="totallyTimeSpent" value="111443000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -817,13 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -845,16 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/V1/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="39" column="69" lean-forward="true" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
-          <folding>
-            <element signature="e#58#94#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -871,10 +860,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286">
-          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        <state relative-caret-position="234">
+          <caret line="36" column="51" lean-forward="true" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
           <folding>
             <element signature="e#40#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/V1/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="985">
+          <caret line="81" column="41" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="41" />
+          <folding>
+            <element signature="e#58#94#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
