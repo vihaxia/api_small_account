@@ -54,7 +54,7 @@ class UserController extends Controller
         if (!$user) {
             $user = User::create([
                 'weapp_openid' => $weappOpenid,
-                'weapp_session_key' => $weixinSessionKey,
+                'weixin_session_key' => $weixinSessionKey,
                 'weapp_avatar' => $avatar,
                 'nickname' => $nickname,
                 'country' => $country,
@@ -76,8 +76,7 @@ class UserController extends Controller
             $attributes['gender'] = $gender;
         }
         // 更新用户数据
-        DB::connection()->enableQueryLog();
-        $user->update($attributes);
+        User::where('weapp_openid', $weappOpenid)->update($attributes);
 
         // 直接创建token并设置有效期
         $createToken = $user->createToken($user->weapp_openid);
@@ -89,8 +88,7 @@ class UserController extends Controller
             'access_token' => $token,
             'token_type' => "Bearer",
             'expires_in' => Carbon::now()->addDays(30),
-            'data' => $user,
-            'sql' => DB::getQueryLog()
+            'data' => $user
         ], 200);
     }
 }
