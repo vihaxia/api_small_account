@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 $api = app('Dingo\Api\Routing\Router');
 
 // 配置api版本和路由
-$api->version('v1', ['namespace' => 'App\Http\Controllers\Api\V1\Controller'], function ($api) {
+$api->version('v1', ['namespace' => 'App\Http\Controllers\Api\V1'], function ($api) {
     $api->post('/user/login', 'UserController@weappLogin');
     $api->any('/wechat', 'WeChatController@serve');  // 微信相关交互路由
 });
