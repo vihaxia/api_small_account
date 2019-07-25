@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="34abccd9-1dcd-45a2-9944-ac4014e9aaab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/RecordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/RecordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/RelationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/RelationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/UserController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -400,12 +395,12 @@
       <workItem from="1563412926381" duration="33174000" />
       <workItem from="1563522486818" duration="12790000" />
       <workItem from="1563843666062" duration="14642000" />
-      <workItem from="1563891866250" duration="25189000" />
+      <workItem from="1563891866250" duration="25221000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119912000" />
+    <option name="totallyTimeSpent" value="119944000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
