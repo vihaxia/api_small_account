@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Api\V1\Controller;
 
-use App\Http\Controllers\Controller;
 use App\Model\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -77,7 +76,9 @@ class UserController extends Controller
             $attributes['gender'] = $gender;
         }
         // 更新用户数据
-        $user->update($attributes);
+        $aa = $user->update($attributes);
+        dump($aa);
+        exit();
         // 直接创建token并设置有效期
         $createToken = $user->createToken($user->weapp_openid);
         $createToken->token->expires_at = Carbon::now()->addDays(30);
