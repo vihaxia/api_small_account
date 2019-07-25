@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Controller;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Model\Relation;
 

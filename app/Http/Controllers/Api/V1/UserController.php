@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Controller;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Model\User;
 use Carbon\Carbon;
@@ -32,6 +32,7 @@ class UserController extends Controller
     public function weappLogin(Request $request)
     {
         $code = $request->code;
+        $aa = 0;
         // 根据 code 获取微信 openid 和 session_key
         $miniProgram = \EasyWeChat::miniProgram();
         $data = $miniProgram->auth->session($code);
@@ -77,8 +78,6 @@ class UserController extends Controller
         }
         // 更新用户数据
         $aa = $user->update($attributes);
-        dump($aa);
-        exit();
         // 直接创建token并设置有效期
         $createToken = $user->createToken($user->weapp_openid);
         $createToken->token->expires_at = Carbon::now()->addDays(30);
@@ -90,6 +89,7 @@ class UserController extends Controller
             'token_type' => "Bearer",
             'expires_in' => Carbon::now()->addDays(30),
             'data' => $user,
+            'aa' => $aa
         ], 200);
     }
 }
