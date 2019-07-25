@@ -14,20 +14,20 @@ class UserController extends Controller
      * @author xialingfu
      * @return false|string
      */
-    public function index() {
-        $user = User::find($this->userId);
-        if ($user) {
-            return response()->json([
-                'code' => 0,
-                'data' => $user['user_info']
-            ]);
-        }
-
-        return response()->json([
-            'code' => -1,
-            'error' => 'skey错误'
-        ]);
-    }
+//    public function index() {
+//        $user = User::find($this->userId);
+//        if ($user) {
+//            return response()->json([
+//                'code' => 0,
+//                'data' => $user['user_info']
+//            ]);
+//        }
+//
+//        return response()->json([
+//            'code' => -1,
+//            'error' => 'skey错误'
+//        ]);
+//    }
 
     public function weappLogin(Request $request)
     {
