@@ -18,6 +18,8 @@ class Controller extends BaseController
 
     public function __construct(Request $request)
     {
-        $this->userId = User::where('weixin_session_key', $request->header('X-WX-Skey'))->find()['id'] ?? 0;
+        $user = User::where('weixin_session_key', $request->header('X-WX-Skey'))->first();
+        // 会员编号
+        $this->userId = $user->id ?? 0;
     }
 }
