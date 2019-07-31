@@ -16,7 +16,7 @@ $api = app('Dingo\Api\Routing\Router');
 
 // 配置api版本和路由
 $api->version('v1', ['namespace' => 'App\Http\Controllers\Api\V1'], function ($api) {
-    $api->post('/user/login', 'UserController@weappLogin');
+    $api->post('/user/login', 'UserController@getWxUserInfo');
     $api->group(['middleware' => 'CheckWxSkey'], function ($api) {
         $api->resource('record', 'RecordController'); // 记录
         $api->get('user', 'UserController@index'); // 我的
