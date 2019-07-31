@@ -109,10 +109,23 @@ class UserController extends Controller
         $iv = request('iv', '');
 
         //根据 code 获取用户 session_key 等信息, 返回用户openid 和 session_key
-        $userInfo = $this->wxxcx->getLoginInfo($code);
+        //$loginInfo = $this->wxxcx->getLoginInfo($code);
 
         //获取解密后的用户信息
-        return $this->wxxcx->getUserInfo($encryptedData, $iv);
+        $wxUserInfo = $this->wxxcx->getUserInfo($encryptedData, $iv);
+
+        User::updateOrCreate(['openid' => $wxUserInfo['openId']], [
+            'openid' => $wxUserInfo['openId'],
+            'avatar' => $wxUserInfo['avatar'],
+            'nickname' => $wxUserInfo['nickname'],
+            'country' => $wxUserInfo['country'],
+            'province' => $wxUserInfo['province'],
+            'city' => $wxUserInfo['city'],
+            'gender' => $wxUserInfo['gender'],
+            'language' => $wxUserInfo['language'],
+        ]);
+
+        return $wxUserInfo;
     }
 
 }
