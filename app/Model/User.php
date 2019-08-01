@@ -20,6 +20,6 @@ class User extends Model
         'country',
         'province',
         'avatar',
-        'remember_token'
+        'token'
     ];
 }

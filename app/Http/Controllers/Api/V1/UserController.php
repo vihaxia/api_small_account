@@ -132,7 +132,7 @@ class UserController extends Controller
             'province' => $wxUserInfo['province'],
             'country' => $wxUserInfo['country'],
             'avatar' => $wxUserInfo['avatarUrl'],
-            'remember_token' => md5(sha1($wxUserInfo['openId']. rand(10000, 99999)))
+            'token' => md5(sha1($wxUserInfo['openId']. rand(10000, 99999)))
         ]);
 
         return $wxUserInfo;
