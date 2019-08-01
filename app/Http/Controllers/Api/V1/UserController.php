@@ -123,6 +123,8 @@ class UserController extends Controller
 
         $wxUserInfo = json_decode($wxUserInfo, true);
 
+        $wxUserInfo['token'] = md5(sha1($wxUserInfo['openId']. rand(10000, 99999))); // 接口请求凭证
+
         User::updateOrCreate(['openid' => $loginInfo['openid']], [
             'openid' => $loginInfo['openid'],
             'nickname' => $wxUserInfo['nickName'],
@@ -132,7 +134,7 @@ class UserController extends Controller
             'province' => $wxUserInfo['province'],
             'country' => $wxUserInfo['country'],
             'avatar' => $wxUserInfo['avatarUrl'],
-            'token' => md5(sha1($wxUserInfo['openId']. rand(10000, 99999)))
+            'token' => $wxUserInfo['token']
         ]);
 
         return $wxUserInfo;
