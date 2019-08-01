@@ -15,10 +15,11 @@ class CheckWxSkey
      */
     public function handle($request, Closure $next)
     {
-        if (!$request->header('X-WX-Skey')) {
+        if (!$request->header('token')) {
             response()->json([
-                'error' => '缺少头信息：X-WX-Skey',
-            ], 401);
+                'code' => -1,
+                'error' => '缺少头信息：token'
+            ], 200);
             exit();
         }
 

@@ -18,8 +18,39 @@ class Controller extends BaseController
 
     public function __construct(Request $request)
     {
-        $user = User::where('weixin_session_key', $request->header('X-WX-Skey'))->first();
+        $user = User::where('token', $request->header('token'))->first();
         // 会员编号
         $this->userId = $user->id ?? 0;
     }
+
+    /**
+     * 成功返回
+     *
+     * @author xialingfu
+     * @param $data
+     * @param string $msg
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function success($data, $msg = "ok") {
+        return response()->json([
+            'code' => 0,
+            'data' => $data
+        ], 200);
+    }
+
+
+    /**
+     * 失败返回
+     *
+     * @author xialingfu
+     * @param string $msg
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function error($msg = "fail") {
+        return response()->json([
+            'code' => -1,
+            'error' => $msg
+        ], 200);
+    }
+
 }
