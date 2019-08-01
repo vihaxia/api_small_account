@@ -16,11 +16,10 @@ class CheckToken
     public function handle($request, Closure $next)
     {
         if (!$request->header('token')) {
-            response()->json([
+            return response()->json([
                 'code' => -1,
                 'error' => '缺少头信息：token'
             ], 200);
-            exit();
         }
 
         return $next($request);

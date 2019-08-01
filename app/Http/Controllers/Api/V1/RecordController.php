@@ -56,7 +56,7 @@ class RecordController extends Controller
         }
 
         return $this->success([
-            'records' => $record,
+            'records' => $records,
             'money' => ($money / 100),
             'header_speech' => $headerSpeech[$type][$speechKey],
             'bottom_speech' => $bodySpeech[array_rand($bodySpeech)]
