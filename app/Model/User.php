@@ -12,22 +12,14 @@ class User extends Model
     use HasApiTokens, Notifiable;
 
     protected $fillable = [
-        'id',
-        'name',
-        'email',
-        'email_verified_at',
-        'username',
-        'phone',
-        'weapp_openid',
+        'openid',
         'nickname',
-        'weapp_avatar',
+        'gender',
+        'language',
+        'city',
         'country',
         'province',
-        'city',
-        'language',
-        'location',
-        'gender',
-        'level',//用户等级
-        'is_admin',//is管理员
+        'avatar',
+        'remember_token'
     ];
 }

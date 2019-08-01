@@ -109,20 +109,28 @@ class UserController extends Controller
         $iv = request('iv', '');
 
         //根据 code 获取用户 session_key 等信息, 返回用户openid 和 session_key
-        //$loginInfo = $this->wxxcx->getLoginInfo($code);
+        $loginInfo = $this->wxxcx->getLoginInfo($code);
 
         //获取解密后的用户信息
         $wxUserInfo = $this->wxxcx->getUserInfo($encryptedData, $iv);
 
-        User::updateOrCreate(['openid' => $wxUserInfo['openId']], [
-            'openid' => $wxUserInfo['openId'],
-            'avatar' => $wxUserInfo['avatar'],
-            'nickname' => $wxUserInfo['nickname'],
-            'country' => $wxUserInfo['country'],
-            'province' => $wxUserInfo['province'],
-            'city' => $wxUserInfo['city'],
+        if (is_array($wxUserInfo)) {
+            return response()->json([
+                'code' => -1,
+                'error' => $wxUserInfo['message']
+            ], 400);
+        }
+
+        User::updateOrCreate(['openid' => $loginInfo['openid']], [
+            'openid' => $loginInfo['openid'],
+            'nickname' => $wxUserInfo['nickName'],
             'gender' => $wxUserInfo['gender'],
             'language' => $wxUserInfo['language'],
+            'city' => $wxUserInfo['city'],
+            'province' => $wxUserInfo['province'],
+            'country' => $wxUserInfo['country'],
+            'avatar' => $wxUserInfo['avatarUrl'],
+            'remember_token' => md5(sha1($wxUserInfo['openId']. rand(10000, 99999)))
         ]);
 
         return $wxUserInfo;
