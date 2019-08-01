@@ -121,6 +121,8 @@ class UserController extends Controller
             ], 400);
         }
 
+        $wxUserInfo = json_decode($wxUserInfo, true);
+
         User::updateOrCreate(['openid' => $loginInfo['openid']], [
             'openid' => $loginInfo['openid'],
             'nickname' => $wxUserInfo['nickName'],
