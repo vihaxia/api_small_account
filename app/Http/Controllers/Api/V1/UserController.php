@@ -15,6 +15,13 @@ class UserController extends Controller
         $this->wxxcx = $wxxcx;
     }
 
+    /**
+     * 小程序微信登录
+     *
+     * @author xialingfu
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Exception
+     */
     public function wxLogin() {
         //code 在小程序端使用 wx.login 获取
         $code = request('code', '');

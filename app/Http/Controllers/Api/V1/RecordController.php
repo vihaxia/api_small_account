@@ -10,11 +10,13 @@ class RecordController extends Controller
 {
 
     /**
+     * 首页记录
+     *
+     * @author xialingfu
      * @param Request $request
-     * @return false|string
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function index(Request $request)
-    {
+    public function index(Request $request) {
 
         $type = $request->has('type') ? $request->type : 1;
 
@@ -53,14 +55,12 @@ class RecordController extends Controller
             }
         }
 
-        return response()->json([
-            'code' => 0,
-            'data' => $records,
+        return $this->success([
+            'records' => $record,
             'money' => ($money / 100),
             'header_speech' => $headerSpeech[$type][$speechKey],
-            'body_speech' => $bodySpeech[array_rand($bodySpeech)]
+            'bottom_speech' => $bodySpeech[array_rand($bodySpeech)]
         ]);
-
     }
 
 
