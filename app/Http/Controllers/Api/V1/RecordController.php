@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Model\Record;
+use App\Model\Relation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -55,7 +56,10 @@ class RecordController extends Controller
             }
         }
 
+        $relations = app('App\Http\Controllers\Api\V1\RelationController')->list();
+
         return $this->success([
+            'relation' => $relations,
             'records' => $records,
             'money' => ($money / 100),
             'header_speech' => $headerSpeech[$type][$speechKey],

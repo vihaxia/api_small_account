@@ -25,5 +25,10 @@ class RelationController extends Controller
 //        }
 //        dump($relations);
     }
+
+    public function list()
+    {
+        return Relation::whereIn('user_id', [0, $this->userId])->pluck('name', 'id');
+    }
     
 }
